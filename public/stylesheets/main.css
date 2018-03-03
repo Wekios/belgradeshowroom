@@ -50,3 +50,12 @@ body {
   display:flex;
   flex-wrap: wrap;
 }
+
+/* index page styles */
+.jumbotron {
+  background-image: url("https://cdn.wallpapersafari.com/36/37/FwV54C.jpg");
+  background-size:  cover;
+  background-position:  center;
+  color: white;
+  text-shadow: 2px 2px black;
+}
