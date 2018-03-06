@@ -5,10 +5,10 @@
              <h1><span class="glyphicon glyphicon-headphones"></span> Welcome To BG showroom!</h1>
              <p>View our hand-picked club reviews</p>
              <p>
-                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Club</a>
+                <a class="btn btn-primary btn-lg" href="/clubs/new">Add New Club</a>
              </p>
               <p>
-              <form action="/campgrounds" method="GET" class="form-inline" id="campground-search">
+              <form action="/clubs" method="GET" class="form-inline" id="club-search">
                 <div class="form-group">
                   <input type="text" name="search" placeholder="Review search..." class="form-control">
                 </div>
@@ -17,16 +17,16 @@
          </div>
      </header>
      
-     <div class="row text-center flex-wrap" id="campground-grid">
-        <% campgrounds.forEach(function(campground){ %>
+     <div class="row text-center flex-wrap" id="club-grid">
+        <% clubs.forEach(function(club){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                   <img src="<%= campground.image %>">
+                   <img src="<%= club.image %>">
                    <div class="caption">
-                       <h4><%= campground.name %></h4>
+                       <h4><%= club.name %></h4>
                    </div>
                    <p>
-                       <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                       <a href="/clubs/<%= club._id %>" class="btn btn-primary">More Info</a>
                    </p>
                 </div>
             </div>

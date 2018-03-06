@@ -1,5 +1,5 @@
 var Comment = require('../models/comment');
-var Campground = require('../models/campground');
+var club = require('../models/club');
 module.exports = {
   isLoggedIn: function(req, res, next){
       if(req.isAuthenticated()){
@@ -8,18 +8,18 @@ module.exports = {
       req.flash('error', 'You must be signed in to do that!');
       res.redirect('/login');
   },
-  checkUserCampground: function(req, res, next){
-    Campground.findById(req.params.id, function(err, foundCampground){
-      if(err || !foundCampground){
+  checkUserclub: function(req, res, next){
+    club.findById(req.params.id, function(err, foundclub){
+      if(err || !foundclub){
           console.log(err);
-          req.flash('error', 'Sorry, that campground does not exist!');
-          res.redirect('/campgrounds');
-      } else if(foundCampground.author.id.equals(req.user._id) || req.user.isAdmin){
-          req.campground = foundCampground;
+          req.flash('error', 'Sorry, that club does not exist!');
+          res.redirect('/clubs');
+      } else if(foundclub.author.id.equals(req.user._id) || req.user.isAdmin){
+          req.club = foundclub;
           next();
       } else {
           req.flash('error', 'You don\'t have permission to do that!');
-          res.redirect('/campgrounds/' + req.params.id);
+          res.redirect('/clubs/' + req.params.id);
       }
     });
   },
@@ -28,13 +28,13 @@ module.exports = {
        if(err || !foundComment){
            console.log(err);
            req.flash('error', 'Sorry, that comment does not exist!');
-           res.redirect('/campgrounds');
+           res.redirect('/clubs');
        } else if(foundComment.author.id.equals(req.user._id) || req.user.isAdmin){
             req.comment = foundComment;
             next();
        } else {
            req.flash('error', 'You don\'t have permission to do that!');
-           res.redirect('/campgrounds/' + req.params.id);
+           res.redirect('/clubs/' + req.params.id);
        }
     });
   },

@@ -6,7 +6,7 @@ var express     = require("express"),
     cookieParser = require("cookie-parser"),
     LocalStrategy = require("passport-local"),
     flash        = require("connect-flash"),
-    Campground  = require("./models/campground"),
+    club  = require("./models/club"),
     Comment     = require("./models/comment"),
     User        = require("./models/user"),
     session = require("express-session"),
@@ -17,7 +17,7 @@ require('dotenv').load();
 
 //requiring routes
 var commentRoutes    = require("./routes/comments"),
-    campgroundRoutes = require("./routes/campgrounds"),
+    clubRoutes = require("./routes/clubs"),
     indexRoutes      = require("./routes/index")
     
 // assign mongoose promise library and connect to database
@@ -61,8 +61,8 @@ app.use(function(req, res, next){
 
 
 app.use("/", indexRoutes);
-app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/clubs", clubRoutes);
+app.use("/clubs/:id/comments", commentRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("The YelpCamp Server Has Started!");
