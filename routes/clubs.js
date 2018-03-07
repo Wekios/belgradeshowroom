@@ -133,7 +133,7 @@ router.delete("/:id", isLoggedIn, checkUserclub, function(req, res) {
                 req.flash('error', err.message);
                 return res.redirect('/');
             }
-            req.flash('error', 'club deleted!');
+            req.flash('error', 'Club review removed!');
             res.redirect('/clubs');
           });
       }

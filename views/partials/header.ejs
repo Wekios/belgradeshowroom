@@ -34,8 +34,8 @@
                     <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign Up</a></li>
                 <% } else { %>
                     <li>
-                      <a href="#">
-                        Signed In As <%= currentUser.username %>
+                      <a href="/users/<%=currentUser.id%>">
+                        Signed In As <em><%= currentUser.username %></em>
                       <% if(currentUser && currentUser.isAdmin) {%>
                       <strong>ADMIN</strong>
                       <% } %>

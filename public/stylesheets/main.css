@@ -53,7 +53,7 @@ body {
 
 /* index page styles */
 .jumbotron {
-  background-image: url("https://cdn.wallpapersafari.com/36/37/FwV54C.jpg");
+  background-image: url("../bg.jpg");
   background-size:  cover;
   background-position:  center;
   color: white;

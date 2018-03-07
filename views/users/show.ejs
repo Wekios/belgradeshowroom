@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<div class="row">
+    <div class="col-md-4">
+        <h1><%= user.firstName + " " + user.lastName %></h1>
+        <div class="thumbnail">
+            <img src="<%= user.avatar %>" alt="user profile image">
+            <div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+        </div>
+        <em>Club people project themselves onto to the people around them.  
+        They're not generally interested in internalizing their surroundings.  
+        Their surroundings become more like them.  They burn brightly and brashly.  
+        They know who they are already.  They have thick skin and strong senses of what 
+        the world should be like.  They are much less concerned with what people think of them, 
+        which gives them a special glow of confidence...</em> 
+    </div>
+    <div class="col-md-8">
+        <h4>Club reviews posted by <%= user.username %></h4>
+              <% if(clubs.length < 1) { %>
+                  <h6 class="mt-4 ml-2"><em>No club reviews submitted yet...</em></h6> 
+             <% } else { %>
+                  <% clubs.forEach( club => { %>
+                       <p class="user-club-list"><a href="../clubs/<%= club.id %>"><%= club.name %></a></p>
+                 <% }) %>
+            <% } %>
+        </ul>
+    </div>
+</div>
+
+<% include ../partials/footer %>
