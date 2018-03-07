@@ -52,7 +52,7 @@ router.post("/login", passport.authenticate("local",
         successRedirect: "/clubs",
         failureRedirect: "/login",
         failureFlash: true,
-        successFlash: 'Welcome to YelpCamp!'
+        successFlash: 'Welcome to Belgrade showroom!'
     }), function(req, res){
 });
 
