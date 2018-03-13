@@ -7,7 +7,13 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  font-family: 'Permanent Marker', cursive;
 }
+
+.navbar {
+  font-weight: bold;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -15,6 +21,7 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #f5f5f5;
+  font-weight: bold;
 }
 
 .container .text-muted {
@@ -28,6 +35,7 @@ body {
 
 .thumbnail {
     padding: 0;
+    box-shadow: 0 4px 6px 0 hsla(0,0%,0%,0.2);
 }
 
 .thumbnail .caption-full {
@@ -38,6 +46,7 @@ body {
 #map {
 	height: 400px;
 	width: 100%;
+	box-shadow: 0 4px 6px 0 hsla(0,0%,0%,0.2);
 }
 
 /* club show page delete button */
@@ -56,6 +65,45 @@ body {
   background-image: url("../bg.jpg");
   background-size:  cover;
   background-position:  center;
-  color: white;
-  text-shadow: 2px 2px black;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  color: black;
+  text-shadow: 1px 1px white;
+}
+
+.jumbotron h2 {
+    text-shadow: 2px 1px hsl(41, 98%, 78%);
+    margin-bottom: 20px;
+}
+
+/* show page styles */
+
+
+.comment-div {
+  font-family: verdana;
+  margin: 5px;
+}
+.comment-div .pull-right {
+  margin-top: 10px;
+}
+
+
+/* show club page styles */
+.time-stamp {
+  font-weight: lighter;
+}
+
+/* register and login form styles */
+.form-group {
+  box-shadow: 0 4px 6px 0 hsla(0,0%,0%,0.2);
+}
+
+.admin-role {
+  color: #d9534f;
+}
+
+.admin-role:hover {
+  color: #c9302c;
 }

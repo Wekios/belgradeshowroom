@@ -35,10 +35,9 @@
       <div class="row">
         <div class="col-md-12">
           <a href="/users/<%=comment.author.id%>"><strong><%= comment.author.username %></strong></a>
-          <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
-          <div>
+          <span class="pull-right time-stamp"><%= moment(comment.createdAt).fromNow() %></span>
+          <div class="comment-div">
            <%= comment.text %> 
-
            <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
             <div class="pull-right">
               <a href="/clubs/<%=club._id%>/comments/<%=comment._id%>/edit" class="btn btn-xs btn-warning">EDIT</a>
